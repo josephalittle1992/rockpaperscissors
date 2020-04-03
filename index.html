@@ -15,8 +15,12 @@
             let answer = selLower[0].toUpperCase() + selLower.substring(1);
             if (answer != 'Rock' && answer != 'Scissors' && answer != 'Paper'){
                 return 'invalid'
-            } else return answer
-        }    
+            } else{
+                return answer
+            }
+        } else{
+            return 'invalid'
+        }
     }
 
 
@@ -42,7 +46,7 @@
             return('You win!  Paper beats Rock');
         }else if (playerPlay == 'Paper' && computerPlay == 'Scissors'){
             return('You lose!  Scissors beats Paper');
-        }
+        } 
         
 
     }

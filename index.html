@@ -9,39 +9,45 @@
     }
     
     function playerSelection(){
-        //let plays = ['Rock', 'Paper', 'Scissors'];
-        //let hand = Math.floor(Math.random() * plays.length);
-        //return plays[hand]
-        return 'Paper'    
+        let selection = prompt('Enter your hand', 'Rock, Paper, or Scissors?')
+        if (selection){
+            let selLower = selection.toLowerCase();
+            let answer = selLower[0].toUpperCase() + selLower.substring(1);
+            if (answer != 'Rock' && answer != 'Scissors' && answer != 'Paper'){
+                return 'invalid'
+            } else return answer
+        }    
     }
 
 
 
     function playerVersusComputer(playerPlay, computerPlay){
-        if (playerPlay == 'Rock' && computerPlay == 'Paper'){
-            alert('You lose!  Paper beats Rock');
+        if (playerPlay == 'invalid'){
+            return 'Invalid player answer!'
+        } else if (playerPlay == 'Rock' && computerPlay == 'Paper'){
+            return('You lose!  Paper beats Rock');
         } else if (playerPlay == 'Rock' && computerPlay == 'Rock') {
-            alert('You tied!');
+            return('You tied!');
         } else if (playerPlay == 'Rock' && computerPlay == 'Scissors'){
-            alert('You win!  Rock beats Paper');
+            return('You win!  Rock beats Paper');
         } else if (playerPlay == 'Scissors' && computerPlay == 'Paper'){
-            alert('You win!  Scissors beats Paper');
+            return('You win!  Scissors beats Paper');
         } else if (playerPlay == 'Scissors' && computerPlay == 'Rock'){
-            alert('You lose!  Rock beats Scissors');
+            return('You lose!  Rock beats Scissors');
         }else if (playerPlay == 'Scissors' && computerPlay == 'Scissors'){
-            alert('You tied!');
+            return('You tied!');
         }else if (playerPlay == 'Paper' && computerPlay == 'Paper'){
-            alert('You tied!');
+            return('You tied!');
         }else if (playerPlay == 'Paper' && computerPlay == 'Rock'){
-            alert('You win!  Paper beats Rock');
+            return('You win!  Paper beats Rock');
         }else if (playerPlay == 'Paper' && computerPlay == 'Scissors'){
-            alert('You lose!  Scissors beats Paper');
+            return('You lose!  Scissors beats Paper');
         }
         
 
     }
 
-playerVersusComputer(playerSelection(), computerSelection())
+alert(playerVersusComputer(playerSelection(), computerSelection()))
 
 
 

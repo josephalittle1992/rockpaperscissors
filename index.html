@@ -1,0 +1,49 @@
+<head></head>
+<body>
+<script>
+    function computerSelection(){
+        let plays = ['Rock', 'Paper', 'Scissors'];
+        let hand = Math.floor(Math.random() * plays.length);
+        return plays[hand]
+           
+    }
+    
+    function playerSelection(){
+        //let plays = ['Rock', 'Paper', 'Scissors'];
+        //let hand = Math.floor(Math.random() * plays.length);
+        //return plays[hand]
+        return 'Paper'    
+    }
+
+
+
+    function playerVersusComputer(playerPlay, computerPlay){
+        if (playerPlay == 'Rock' && computerPlay == 'Paper'){
+            alert('You lose!  Paper beats Rock');
+        } else if (playerPlay == 'Rock' && computerPlay == 'Rock') {
+            alert('You tied!');
+        } else if (playerPlay == 'Rock' && computerPlay == 'Scissors'){
+            alert('You win!  Rock beats Paper');
+        } else if (playerPlay == 'Scissors' && computerPlay == 'Paper'){
+            alert('You win!  Scissors beats Paper');
+        } else if (playerPlay == 'Scissors' && computerPlay == 'Rock'){
+            alert('You lose!  Rock beats Scissors');
+        }else if (playerPlay == 'Scissors' && computerPlay == 'Scissors'){
+            alert('You tied!');
+        }else if (playerPlay == 'Paper' && computerPlay == 'Paper'){
+            alert('You tied!');
+        }else if (playerPlay == 'Paper' && computerPlay == 'Rock'){
+            alert('You win!  Paper beats Rock');
+        }else if (playerPlay == 'Paper' && computerPlay == 'Scissors'){
+            alert('You lose!  Scissors beats Paper');
+        }
+        
+
+    }
+
+playerVersusComputer(playerSelection(), computerSelection())
+
+
+
+</script>
+</body>

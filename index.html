@@ -1,88 +1,45 @@
-<head></head>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <title>Rock Paper Scissors</title>
+</head>
+
 <body>
-<script>
-    function computerSelection(){
-        let plays = ['Rock', 'Paper', 'Scissors'];
-        let hand = Math.floor(Math.random() * plays.length);
-        return plays[hand]
-           
-    }
-    
-    function playerSelection(){
-        let selection = prompt('Enter your hand', 'Rock, Paper, or Scissors?')
-        if (selection){
-            let selLower = selection.toLowerCase();
-            let answer = selLower[0].toUpperCase() + selLower.substring(1);
-            if (answer != 'Rock' && answer != 'Scissors' && answer != 'Paper'){
-                return 'invalid'
-            } else{
-                return answer
-            }
-        } else{
-            return 'invalid'
-        }
-    }
+    <div id="app">
+        <div id='title'>
+            <h1>Rock Paper Scissors!</h1>
+        </div>
 
+        <div>
+            <p id="score">Score</p>
+        </div>
+        <div>
+            <p id="status">Status</p>
+        </div>
 
+        <div id="moveContainer">
+            <div class="moves"><img id="rock" src='rock.jpg'></div>
+            <div class="moves"><img id="paper"  src='paper.jpg'></div>
+            <div  class="moves"><img id="scissors" src='scissors.jpg'></div>
+        </div>
+        <div class="buttons">
+            <button id="btnStart">Start Game</button>
 
-    function playerVersusComputer(playerPlay, computerPlay){
-        if (playerPlay == 'invalid'){
-            return 'Invalid player answer!'
-        } else if (playerPlay == 'Rock' && computerPlay == 'Paper'){
-            return('You lose!  Paper beats Rock');
-        } else if (playerPlay == 'Rock' && computerPlay == 'Rock') {
-            return('You tied!');
-        } else if (playerPlay == 'Rock' && computerPlay == 'Scissors'){
-            return('You win!  Rock beats Paper');
-        } else if (playerPlay == 'Scissors' && computerPlay == 'Paper'){
-            return('You win!  Scissors beats Paper');
-        } else if (playerPlay == 'Scissors' && computerPlay == 'Rock'){
-            return('You lose!  Rock beats Scissors');
-        }else if (playerPlay == 'Scissors' && computerPlay == 'Scissors'){
-            return('You tied!');
-        }else if (playerPlay == 'Paper' && computerPlay == 'Paper'){
-            return('You tied!');
-        }else if (playerPlay == 'Paper' && computerPlay == 'Rock'){
-            return('You win!  Paper beats Rock');
-        }else if (playerPlay == 'Paper' && computerPlay == 'Scissors'){
-            return('You lose!  Scissors beats Paper');
-        } 
+        </div>
         
 
-    }
-
-    function game(){
-        let playerScore = 0;
-        let computerScore = 0;
-        for (i = 0; i < 5; i++){
-            let result = playerVersusComputer(playerSelection(), computerSelection());
-            if (result.substring(4,5) == 'w'){
-                playerScore += 1
-                console.log(result)
-            } else if (result.substring(4,6) == 'lo'){
-                computerScore += 1
-                console.log(result)
-            } else if (result.substring(4,5) == 't'){
-                console.log(result)
-            } else {
-                console.log(result);
-                i -= 1
-            }
-            console.log('Computer Score = ' + computerScore);
-            console.log('Player Score = ' + playerScore);
-            
-        }
-        if (computerScore > playerScore){
-            console.log('Computer Wins!')
-        } else if (computerScore < playerScore){
-            console.log('Player Wins!')
-        } else console.log('It\'s a tie!');
-        
-    }
-game()
 
 
 
 
-</script>
+    </div>
+
+
+
+
+    <script src="script.js"></script>
 </body>
+
+</html>
